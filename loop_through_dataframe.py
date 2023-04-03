@@ -19,10 +19,13 @@ student_data_frame = pandas.DataFrame(student_dict)
 #     print(value)
 
 # Loop through rows of a data frame
-for (index, row) in student_data_frame.iterrows():
+# for (index, row) in student_data_frame.iterrows():
     # print(index)
     # print(row)
     # print(row.student)
     # print(row.score)
-    if row.student == "Anu":
-        print(row.score)
+    # if row.student == "Anu":
+    #     print(row.score)
+
+student_scores = {row.student: row.score for (index, row) in student_data_frame.iterrows()}
+print(student_scores)
